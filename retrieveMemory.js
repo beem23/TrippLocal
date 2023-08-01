@@ -6,6 +6,8 @@ function getMemory() {
             if (err) {
                 console.error(`Error reading file from disk: ${err}`);
                 reject(err)
+            } else if (data == "") {
+                resolve('Empty Memory')
             } else {
                 //Parse file contents
                 const jsonContent = JSON.parse(data);
